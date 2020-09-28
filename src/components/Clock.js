@@ -127,7 +127,7 @@ const Clock = () => {
                 <>
                   <br />
                   <span className="alert">
-                    Invalid Country Name Entered or Enter Full Name
+                    Invalid Country Name Entered!! OR Enter Full Name!!
                   </span>
                   <br />
                 </>
