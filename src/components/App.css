@@ -118,8 +118,22 @@ span.alert {
   font-family: "Kaushan Script", cursive;
 }
 
-@media (max-width: 725px) {
-  h1 {
-    color: red;
+@media (max-width: 765px) {
+  .content {
+    background: radial-gradient(
+      #000529 60%,
+      #00109a 8%,
+      #0117c7 8%,
+      #0056d6 8%,
+      #0117c7 8%,
+      #00109a 8%
+    );
+    border-radius: 100%;
+    width: 60%;
+    margin-left: 24%;
+    padding: 6% 0%;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #000529;
   }
 }
