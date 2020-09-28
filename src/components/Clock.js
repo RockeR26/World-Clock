@@ -126,7 +126,9 @@ const Clock = () => {
               {world.error && (
                 <>
                   <br />
-                  <span className="alert">Invalid Country Name Entered</span>
+                  <span className="alert">
+                    Invalid Country Name Entered or Enter Full Name
+                  </span>
                   <br />
                 </>
               )}
