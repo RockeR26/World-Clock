@@ -135,5 +135,6 @@ span.alert {
     border-width: 5px;
     border-style: solid;
     border-color: #000529;
+    font-size: 0.8em;
   }
 }
