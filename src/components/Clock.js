@@ -59,6 +59,7 @@ const Clock = () => {
           date: t[0],
           time: t[1].substring(0, 5),
           utc: res.data.utc_offset,
+          temp: "",
         });
       } else {
         setWorld({ ...world, error: true });
@@ -98,7 +99,7 @@ const Clock = () => {
             </h4>
             <br />
           </div>
-          {world.present ? (
+          {world.present && (
             <>
               <br />
               <div className="content">
@@ -112,56 +113,62 @@ const Clock = () => {
                 <br />
               </div>
               <br />
-              <button
-                className={dark ? "btn-light" : "btn-dark"}
-                onClick={() => {
-                  setWorld({ ...world, present: false });
-                }}
-              >
-                <i className="fas fa-arrow-left"></i>
-              </button>
-              <br />
-            </>
-          ) : (
-            <>
-              {world.error && (
-                <>
-                  <br />
-                  <span className="alert">
-                    Invalid Country Name Entered!! OR Enter Full Name!!
-                  </span>
-                  <br />
-                </>
-              )}
-              {display ? (
-                <form onSubmit={onSubmit}>
-                  <br />
-                  <br />
-                  <input
-                    type="text"
-                    name="temp"
-                    placeholder="Enter any country"
-                    onChange={onChange}
-                    value={world.temp}
-                  />
-                </form>
-              ) : (
-                <>
-                  <br />
-                  <button
-                    className={dark ? "btn-light" : "btn-dark"}
-                    onClick={() => {
-                      setDisplay(!display);
-                    }}
-                  >
-                    <i className="fas fa-search"></i>
-                  </button>
-                  <br />
-                </>
-              )}
             </>
           )}
         </div>
+        {world.present && (
+          <>
+            {" "}
+            <button
+              className={dark ? "btn-light" : "btn-dark"}
+              onClick={() => {
+                setWorld({ ...world, present: false });
+              }}
+            >
+              <i className="fas fa-arrow-left"></i>
+            </button>
+            <br />
+          </>
+        )}
+        {!world.present && (
+          <>
+            {world.error && (
+              <>
+                <br />
+                <span className="alert">
+                  Invalid Country Name Entered!! OR Enter Full Name!!
+                </span>
+                <br />
+              </>
+            )}
+            {display ? (
+              <form onSubmit={onSubmit}>
+                <br />
+                <br />
+                <input
+                  type="text"
+                  name="temp"
+                  placeholder="Enter any country"
+                  onChange={onChange}
+                  value={world.temp}
+                />
+              </form>
+            ) : (
+              <>
+                <br />
+                <button
+                  className={dark ? "btn-light" : "btn-dark"}
+                  onClick={() => {
+                    setDisplay(!display);
+                  }}
+                >
+                  <i className="fas fa-search"></i>
+                </button>
+                <br />
+              </>
+            )}
+          </>
+        )}
         <br />
         <span>&copy;Rocker2601</span>
       </div>

@@ -47,11 +47,11 @@
   );
   border-radius: 100%;
   width: 20%;
-  margin-left: 40%;
   padding: 4% 0%;
   border-width: 5px;
   border-style: solid;
   border-color: #000529;
+  margin: 10px;
 }
 
 .container h1 {
@@ -117,6 +117,12 @@ span.alert {
 .style {
   font-family: "Kaushan Script", cursive;
 }
+.content-box {
+  display: flex;
+  flex-basis: 20%;
+  justify-content: center;
+  flex-wrap: wrap;
+}
 
 @media (max-width: 765px) {
   .content {
@@ -136,5 +142,6 @@ span.alert {
     border-style: solid;
     border-color: #000529;
     font-size: 0.8em;
+    margin-left: 0;
   }
 }
