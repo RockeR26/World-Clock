@@ -76,6 +76,7 @@ const Clock = () => {
       <div className="adjust">
         <p onClick={Click}>
           <i className="fas fa-adjust"></i>
+          {dark ? "  on" : "  off"}
         </p>
       </div>
       <div className="container">
