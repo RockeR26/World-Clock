@@ -30,9 +30,9 @@ const Clock = () => {
       [name]: value,
     });
   }
-  // setTimeout(() => {
-  //   setDate(new Date());
-  // }, 1000);
+  setTimeout(() => {
+    setDate(new Date());
+  }, 1000);
 
   async function onSubmit(e) {
     try {
