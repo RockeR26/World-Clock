@@ -30,23 +30,27 @@ const Clock = () => {
       [name]: value,
     });
   }
-  setTimeout(() => {
-    setDate(new Date());
-  }, 1000);
+  // setTimeout(() => {
+  //   setDate(new Date());
+  // }, 1000);
 
   async function onSubmit(e) {
     try {
       e.preventDefault();
-      //console.log(getCode(world.country));
+      console.log(getCode(world.temp));
       if (getCode(world.temp) !== undefined) {
         //name of country
         const name = ct.getCountry(getCode(world.temp)).name;
+        console.log(ct.getCountry(getCode(world.temp)));
 
         //api call
         const res = await axios.get(
           "https://worldtimeapi.org/api/timezone/" +
-            ct.getCountry(getCode(world.temp)).timezones[0]
+            ct.getCountry(getCode(world.temp)).timezones[
+              ct.getCountry(getCode(world.temp)).timezones.length - 1
+            ]
         );
+        console.log("hello");
         console.log(res.data);
         //time split
         const t = res.data.datetime.split("T");
