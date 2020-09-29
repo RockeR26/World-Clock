@@ -37,11 +37,11 @@ const Clock = () => {
   async function onSubmit(e) {
     try {
       e.preventDefault();
-      console.log(getCode(world.temp));
+      // console.log(getCode(world.temp));
       if (getCode(world.temp) !== undefined) {
         //name of country
         const name = ct.getCountry(getCode(world.temp)).name;
-        console.log(ct.getCountry(getCode(world.temp)));
+        // console.log(ct.getCountry(getCode(world.temp)));
 
         //api call
         const res = await axios.get(
@@ -50,8 +50,8 @@ const Clock = () => {
               ct.getCountry(getCode(world.temp)).timezones.length - 1
             ]
         );
-        console.log("hello");
-        console.log(res.data);
+        // console.log("hello");
+        // console.log(res.data);
         //time split
         const t = res.data.datetime.split("T");
 
